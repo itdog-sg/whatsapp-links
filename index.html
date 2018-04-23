@@ -1,25 +1,81 @@
 <!DOCTYPE html>
-<title>WhatsApp Link Generator - Send message without adding contact</title>
-<html>
-<body>
+<html lang="en">
 
-<h3>WhatsApp Link Generator - Send message without adding contact</h3>
+  <head>
 
-<input type="number" id="myNumber" value="2">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<p>Please remvoe dash and plus sign(e.g.: +852 2338-0000 >> 85223380000</p>
+    <title>WhatsApp Link Generator - Send message without adding contact</title>
 
-<button onclick="myFunction()">Create</button>
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet">
 
-<p id="gen"></p>
+    <!-- Custom styles for this template -->
+    <style>
+      body {
+        padding-top: 54px;
+      }
+      @media (min-width: 992px) {
+        body {
+          padding-top: 56px;
+        }
+      }
 
-<script>
-function myFunction() {
-	var link = "https://api.whatsapp.com/send?phone=";
-    var x = document.getElementById("myNumber").value;
-    document.getElementById("gen").innerHTML = "<a href="+link+x+">"+link+x+"</a>";
-}
-</script>
+    </style>
 
-</body>
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">WhatsApp Link Generator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1 class="mt-5">How to use:</h1>
+          <p class="lead">Please enter the phone number, remvoe dash and plus sign(e.g.: +852 2338-0000 >> 85223380000)</p>
+          <div class="form-group">
+          	<input type="number" id="phoneNumber">
+          	<button onclick="genLink()" class="btn btn-default">Submit</button>
+        </div>
+        <p id="gen">        <script>
+		function genLink() {
+			var link = "https://api.whatsapp.com/send?phone=";
+		    var x = document.getElementById("phoneNumber").value;
+		    document.getElementById("gen").innerHTML = "<a href="+link+x+">"+link+x+"</a>";
+		}
+		</script></p>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
 </html>
