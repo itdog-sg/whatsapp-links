@@ -13,13 +13,13 @@
 
 <p id="gen"></p>
 
-<a href="<script>
+<script>
 function myFunction() {
 	var link = "https://api.whatsapp.com/send?phone=";
     var x = document.getElementById("myNumber").value;
-    document.getElementById("gen").innerHTML = link+x;
+    document.getElementById("gen").innerHTML = "<a href="+link+x+">"+link+x+"</a>";
 }
-</script>">Click Here"</a>
+</script>
 
 </body>
 </html>
