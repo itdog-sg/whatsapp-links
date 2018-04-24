@@ -55,8 +55,9 @@
         <div class="col-lg-12 text-center">
           <h1 class="mt-5">How to use:</h1>
           <p class="lead">Please enter the phone number, remvoe dash and plus sign(e.g.: +852 2338-0000 >> 85223380000)</p>
-          <div class="form-group">
-          	<select class="form-control" id="w">
+          <div class="form-group row">
+          	<div class="col-xs-2">
+          	<select class="form-control" id="areacode" >
 			    <option>852</option>
 			    <option>1</option>
 			    <option>44</option>
@@ -66,14 +67,18 @@
 			    <option>64</option>
 			    <option>65</option>
 			  </select>
+			  </div>
+			<div class="col-xs-3">
           	<input type="number" id="phoneNumber">
           	<button onclick="genLink()" class="btn btn-default">Submit</button>
+          	</div>
         </div>
         <p id="gen"><script>
 		function genLink() {
 			var link = "https://api.whatsapp.com/send?phone=";
+		    var w = document.getElementById("areacode").value;
 		    var x = document.getElementById("phoneNumber").value;
-		    document.getElementById("gen").innerHTML = "<a href="+link+w+x+">Click here to open your WhatsApp, Number:"+x+"</a>";
+		    document.getElementById("gen").innerHTML = "<a href="+link+w+x+">Click here to open your WhatsApp, Number:"+w+x+"</a>";
 		}
 		</script>
 		</p>
